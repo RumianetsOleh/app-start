@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+    <button onclick="toggleFullscreen()">toggleFullscreen</button>
+    <div id="fullscreenElement" style="border: 2px solid #000; width: 300px; height: 200px">
+    
+        <p>This is an element to enter fullscreen</p>
+    </div>
+
+    <script>function toggleFullscreen() {
+    var element = document.getElementById("fullscreenElement");
+    if (document.fullscreenElement) {
+        document.exitFullscreen();
+        element.style.background = "white";
+        element.style.color = "black";
+    } else {
+        element.requestFullscreen().catch((err)=>{
+            console.error("Error attemptin to enable fullscreen:", err);
+        });
+        element.style.background = "black";
+        element.style.color = "white";
+    }
+}
+
+</script>
+<script src="/HW1.3464ddca.js"></script></body>
+</html>
