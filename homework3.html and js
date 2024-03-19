@@ -163,6 +163,27 @@
         <h2 class="testimonialsH">Client testimonials</h2>
     
     <div class="testimonialsbox">
+
+    <!--
+
+А чому не figure ? =) ЦЕ семантичнйи підхід, якщо порівнювати із універсальним div =)
+
+<figure class="testimonialsclient">
+    <div class="clientphoto">
+        <img src="./src/images/image-thomas.jpg" alt="Thomas photo" class="photo" loading="lazy">
+    </div>
+    <figcaption>
+        <p class="client-text">Sunnyside's enthusiasm coupled with their
+            keep interest in our brand's success made it
+            a satisfying and enjoyable experience.
+        </p>
+        <h4 class="client-name">Thomas S.</h4>
+        <p class="client-status">Chief Operating Officer</p>
+    </figcaption>
+</figure>
+
+    -->
+
     <div class="testimonialsclient">
         <div class="clientphoto">
             <img src="./src/images/image-emily.jpg" alt="Emily photo" class="photo" loading="lazy">
