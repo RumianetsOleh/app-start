@@ -1,0 +1,544 @@
+body {
+    margin: 0;
+    padding: 0;
+}
+
+html {
+font-family: 'barlow', sans-serif;
+font-size: 18px;
+scroll-behavior: smooth;
+} 
+
+h1,
+h2,
+h3,
+h4
+.btn,
+.about-link {
+    font-family: 'fraunces', serif;
+    font-weight: 900;
+}
+
+button {
+    font: inherit;
+    border: none;
+    background: none;
+    cursor: pointer;
+}
+
+*, *::before, *::after {
+margin: 0;
+padding: 0;
+box-sizing: border-box;
+}
+
+span, img {
+    display: block;
+}
+.container {
+    max-width: 1440px;
+    margin: auto;
+    position: relative;
+    overflow: hidden;
+    background: white;
+}
+
+header {
+    position: absolute;
+    left: 0;
+    top:0;
+    width: 100%;
+    z-index: 20;
+    
+}
+
+.navigation {
+    position: relative;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 30px 25px;
+   
+}
+
+.navigationMenu {
+    background: white;
+    position: absolute;
+    top: calc(100% + 25px);
+    left: 25px;
+    right: 25px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 35px;
+    padding: 45px;
+    box-shadow: 0 10px 40px hsla(0, 0%, 0%, 0.1);
+    transform: scale(0.9);
+    transform-origin: top right;
+    opacity: 0;
+    pointer-events: none;
+    transition: 0.25s ease;
+    list-style: none;
+}
+
+.navigationMenu.active {
+    transform: scale(1);
+    opacity: 1;
+    pointer-events: all;
+}
+
+.navigationMenu::before {
+    content: "";
+    position: absolute;
+    top: -19px;
+    right: -20px;
+    border: 20px solid transparent;
+    border-left-color: white;
+    transform: rotate(45deg);
+}
+
+.navigationLink {
+    text-decoration: none;
+    color: hsl(232,10%,55%);
+    font: inherit;
+}
+
+.btn {
+    background-color:  hsl(51,100%,49%);
+    color: hsl(54,96%,10%);
+    font-size: 16px;
+    text-transform: uppercase;
+    font-family: 'Fraunces', serif;
+    font-weight: 900;
+    border-radius: 50px;
+    padding: 18px 30px;
+}
+
+.navigationToggleBtn {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 24px;
+    height: 24px;
+    gap: 6px
+}
+
+.navigationToggleBtn .line {
+    background-color: white;
+    width: 100%;
+    height: 2px;
+    transition: 0.25s ease;
+}
+
+
+.navigationToggleBtn.active .one {
+    transform: translateY(4px) rotate(45deg);
+}
+.navigationToggleBtn.active .two {
+    display: none;
+}
+.navigationToggleBtn.active .three {
+    transform: translateY(-4px) rotate(-45deg);
+}
+
+.home {
+    position: relative;
+    height: 540px;
+    overflow: hidden;
+}
+
+.homeBanner {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: bottom;
+}
+
+.homeContent {
+    position: absolute;
+    top:50%;
+    left: 25px;
+    right: 25px;
+    transform: translateY(-50%);
+    text-align: center;
+}
+
+.mainHeading {
+    color: white;
+    font-size: 40px;
+    text-transform: uppercase;
+    letter-spacing: 7px;
+    margin-bottom: 40px;
+}
+
+.arrow {
+    display: inline-block;
+}
+
+.aboutSection {
+    display: grid;
+    grid-template-columns: 1fr;
+}
+
+.aboutImage {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+
+.aboutContent {
+    padding: 60px 25px;
+    text-align: center;
+    max-width: 512px;
+    margin: auto;
+}
+
+.aboutH {
+    color:hsl(212,27%,19%);
+    font-size: 32px;
+    margin-bottom: 30px;
+}
+
+.aboutP {
+    color: hsl(213,9%,39%);
+    line-height: 1.7;
+    margin-bottom: 30px;
+}
+
+.about-link {
+    position: relative;
+    color: hsl(212,27%,19%);
+    font-size: 16px;
+    text-transform: uppercase;
+    z-index: 1;
+    text-decoration: none;
+  
+}
+
+.about-link::after {
+    content: "";
+    position: absolute;
+    top: 100%;
+    left: 50%;
+    transform: translate(-50%, -8px);
+    background: hsl(51,100%,49%);
+    height: 10px;
+    width: calc(100% + 20px);
+    border-radius: 10px;
+    opacity: 0.3;
+    z-index: -1;
+    transition: 0.25s ease;
+    
+}
+
+.about-link:hover::after {
+    opacity: 1;
+}
+
+.pink::after { 
+    background:  hsl(7,99%,70%);
+}
+
+.services {
+    display: grid;
+    grid-template-columns: 1fr;
+}
+
+.service-box {
+    position: relative;
+}
+
+.service-box .image-box {
+    height: 600px;
+    overflow: hidden;
+}
+
+.image-box-one {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.service-absolute-content {
+    position: absolute;
+    bottom: 40px;
+    left: 50%;
+    transform: translateX(-50%);
+    text-align: center;
+    width: 100%;
+    max-width: 380px;
+    padding: 20px;
+}
+
+.serviceH {
+    font-size: 20px;
+    margin-bottom: 30px;
+    text-transform: capitalize;
+}
+
+.serviceP {
+    font-size: 16px;
+    line-height: 1.7;
+}
+
+.serviceH.cyan,
+.serviceP.cyan {
+    color: hsl(167, 40%, 24%);
+}
+
+.serviceH.blue,
+.serviceP.blue {
+    color: hsl(198, 62%, 26%);
+}
+
+.testimonials {
+    padding: 65px 25px;
+}
+
+.testimonialsH {
+    color: hsl(210, 4%, 67%);
+    text-transform: uppercase;
+    font-size: 16px;
+    text-align: center;
+    letter-spacing: 4px;
+    margin-bottom: 60px;
+}
+
+.testimonialsbox {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 60px
+}
+
+.testimonialsclient{
+    text-align: center;
+}
+
+.clientphoto {
+    width: 70px;
+    height: 70px;
+    border-radius: 50%;
+    margin: auto;
+    margin-bottom: 40px;
+    overflow: hidden;
+}
+
+.photo {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.client-text{
+    max-width: 350px;
+    color: hsl(213,9%,39%);
+    line-height: 1.8;
+    margin: auto;
+    margin-bottom: 30px;
+    
+}
+
+.client-name {
+    color: hsl(212, 27%, 19%);
+    margin-bottom: 14px;
+}
+
+.client-status{
+    color: hsl(210,4%,67%);
+    font-size: 14px;
+}
+
+
+.projects {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+
+}
+
+
+
+.projectsimage{ 
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+footer{
+    background: hsl(167,44%,70%);
+    padding: 70px 30px;
+}
+
+
+.footer-brand {
+    text-align: center;
+    margin-bottom: 40px;
+}
+
+
+.footer-brand svg {
+    transform: scale(1.4);
+}
+
+.footer-nav {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 55px;
+    margin-bottom: 90px;
+    list-style: none;
+}
+
+.footer-nav a {
+    color: hsl(167, 40%, 24%);
+    text-decoration: none;
+    transition: 0.25s ease;
+}
+
+.social-link {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap:25px;
+}
+
+.social-link i {
+    color: hsl(166,46%,31%);
+    font-size: 23px;
+}
+
+.footer-nav a:hover,
+.social-link i:hover {
+
+    color:white;
+
+}
+
+@media screen and (min-width: 1024px) {
+
+.navigation {
+    padding: 35px 40px; 
+    
+}
+
+.logolink img {width: 170px;}
+
+.navigationMenu {
+    gap: 60px;
+    position: static;
+    opacity: 1;
+    transform: scale(1);
+    pointer-events: all;
+    flex-direction: row;
+    background: none;
+    box-shadow: none;
+    padding: 0;
+}
+ 
+.navigationMenu::before {
+    display: none;
+}
+
+.navigationLink {
+    color: white;
+}
+
+.btn{
+    background: white;
+    color: hsl(212,27%,19%);
+    transition: 0.25s ease;
+    
+}
+
+.btn:hover {
+    background: hsla(0, 0%, 100%, 0.3);
+    color: white;
+}
+
+.navigationToggleBtn {
+    display: none;
+}
+
+.home{
+    height: 800px;
+}
+
+.homeContent {
+    max-width: unset;
+    padding: 155px 130px;
+    
+}
+
+.mainHeading {
+    font-size: 60px;
+    margin-bottom: 60px;
+    margin-bottom: 70px;
+
+}
+
+.arrow {
+    margin-bottom: 120px;
+}
+
+.aboutSection {
+    grid-template-columns: 1fr 1fr;
+}
+
+.grid-pos-lg {
+    grid-column: 2/3;
+    grid-row: 1/2;
+}
+
+.aboutContent {
+    padding: 155px 130px;
+    text-align: left;
+    max-width: unset;
+}
+
+.about-link {
+    margin-left: 10px;
+}
+
+.aboutH {
+    font-size: 40px;
+}
+
+.aboutP {
+    margin-bottom: 40px;
+}
+
+.services {
+    grid-template-columns: 1fr 1fr;
+}
+
+
+.testimonials {
+    padding: 140px 40px;
+}
+
+.testimonialsH {
+    font-size: 20px;
+    letter-spacing: 5px;
+}
+
+.testimonialsbox {
+    grid-template-columns: repeat(3, 1fr);
+    gap:25px
+}
+
+
+.projects {
+    grid-template-columns: repeat(4, 1fr);
+
+}
+
+.clientphoto {
+    margin-bottom: 60px ;
+}
+
+.client-text {
+    margin-bottom: 70px;
+}
+
+}
